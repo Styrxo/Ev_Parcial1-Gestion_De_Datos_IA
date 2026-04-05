@@ -20,8 +20,10 @@ La solución utiliza un **Pipeline Híbrido Modular**. Está elección permite c
 
 ### Componentes del Flujo de Datos:
 
-1. **Ingesta (Capa Bronze):** Captura de eventos crudos mediante un microservicio "Producer" y almacenamiento persistente para recuperación ante fallos.
-2. **Procesamiento (Capa Silver y Gold):**
+1. **Ingesta (Apache Kafka):** Captura de eventos crudos mediante un microservicio "Producer" y almacenamiento persistente para recuperación ante fallos. Es un sistema de mensajería tipo pub/sub que captura miles de eventos por segundo con baja latencia en tiempo real. Además, asegura que los datos no se pierdan si un componente del pipeline falla o se actualiza.
+
+2. **Procesamiento (Capa Bronze, Silver y Gold):**
+ * **Bronze:** La capa Bronze almacena los datos crudos e históricos de la red social tal como llegan de la fuente. Su función es asegurar la persistencia y permitir el re-procesamiento de la información si las reglas del negocio cambian cada 15 días.
  * **Silver:** Limpieza, filtrado y validación de tokens.
  * **Gold:** Enriquecimiento y agregación de datos para generar la notificación final lista para el usuario.
 3. **Servicio y Entrega:** Distribución mediante un API Gateway para seguridad y Websockets para mantener una conexión bidireccional activa con el cliente.

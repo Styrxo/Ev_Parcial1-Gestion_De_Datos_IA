@@ -47,7 +47,5 @@ Para desplegar y desarrollar este proyecto, el desarrollador debe contar con las
 
 1.  **Clonar el repositorio:**
     `git clone https://github.com/Styrxo/Ev_Parcial1-Gestion_De_Datos_IA.git`
-2.  **Configurar Cluster de Kafka:** Levantar los servicios de Kafka para habilitar la ingesta en la capa Bronze.
-3.  **Configurar Spark:** Asegurar que los jobs de Spark tengan acceso a los tópicos de Kafka para iniciar el procesamiento Medallion.
-4.  **Desplegar API Gateway:** Configurar las rutas de acceso para los WebSockets.
-5.  **Prueba de Conexión:** Ejecutar el microservicio "Producer" para validar que los datos fluyen desde la interacción del usuario hasta la Capa Gold.
+2.  **Copiar el ReadMe.md y configurarlo en base a tu propio proyecto.**
+
